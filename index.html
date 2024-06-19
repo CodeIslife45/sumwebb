@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Addition</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Source Code Pro', monospace;
+            background-color: #000;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            max-width: 450px;
+            text-align: center;
+            padding: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+        }
+
+        input[type="number"], button {
+            display: block;
+            width: 100%;
+            max-width: 350px;
+            padding: 16px;
+            margin: 20px auto;
+            font-size: 20px;
+            border: none;
+            border-radius: 8px;
+            box-sizing: border-box;
+            font-family: 'Source Code Pro', monospace;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .white-text {
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="white-text">Enter Numbers to Add</h1>
+        <input type="number" id="num1" placeholder="Enter first number">
+        <input type="number" id="num2" placeholder="Enter second number">
+        <button onclick="processInput()">Add</button>
+    </div>
+
+    <script>
+        function processInput() {
+            const num1 = parseFloat(document.getElementById('num1').value);
+            const num2 = parseFloat(document.getElementById('num2').value);
+
+            if (num1 === 9 && num2 === 11) {
+                window.location.href = 'video.html';
+            } else {
+                window.location.href = `result.html?num1=${num1}&num2=${num2}`;
+            }
+        }
+
+        document.getElementById('num1').addEventListener('keyup', function(event) {
+            if (event.key === 'Enter') {
+                processInput();
+            }
+        });
+
+        document.getElementById('num2').addEventListener('keyup', function(event) {
+            if (event.key === 'Enter') {
+                processInput();
+            }
+        });
+    </script>
+</body>
+</html>

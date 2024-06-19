@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Source Code Pro', monospace;
+            background-color: #000;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            width: 80%;
+            height: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 40px;
+        }
+
+        h2 {
+            font-size: 60px; /* Larger font size for the result text */
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2 id="sum"></h2>
+    </div>
+
+    <script>
+        // Get parameters from URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const num1 = parseFloat(urlParams.get('num1'));
+        const num2 = parseFloat(urlParams.get('num2'));
+
+        // Calculate sum and display
+        const sum = num1 + num2;
+        document.getElementById('sum').innerText = `Sum: ${sum}`;
+    </script>
+</body>
+</html>
